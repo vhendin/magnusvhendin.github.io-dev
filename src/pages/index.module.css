@@ -1,0 +1,95 @@
+@keyframes wave-left {
+    0%   {
+        transform: rotate(-10deg) scaleX(-1);
+    }
+    100% {
+        transform: rotate(40deg) scaleX(-1);
+    }
+}
+
+@keyframes wave-right {
+    0%   {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes head-turn {
+    0%   {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.face {
+    text-decoration: none;
+    font-size: 65px;
+    animation: head-turn 5s infinite alternate ease-in-out;
+    transition: transform 500ms ease-in-out;
+}
+
+.face:hover {
+    transform: scale(2, 2);
+}
+
+.hand {
+    animation-duration: 1s;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.right {
+    composes: hand;
+    animation-name: wave-right;
+}
+
+.left {
+    composes: hand;
+    animation-name: wave-left;
+}
+
+.randomize {
+    border: 1px solid #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: #F0C928;
+    -webkit-box-shadow: 0px 10px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 10px 0px 0px rgba(0,0,0,1);
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,1);
+}
+.randomize:active {
+    transform: translateY(5px);
+    -webkit-box-shadow: 0px 5px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 5px 0px 0px rgba(0,0,0,1);
+    box-shadow: 0px 5px 0px 0px rgba(0,0,0,1);
+}
+footer {
+    margin-top: 50px;
+}
